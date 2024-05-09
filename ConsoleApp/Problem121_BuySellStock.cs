@@ -16,24 +16,21 @@ internal class Problem121_BuySellStock
 
     public int MaxProfit(int[] prices)
     {
-        var profit = 0;
         var maxProfit = 0;
-        var buy = 0;
+        int buy = 0, sell = 1;
 
-        for (int i = 0; i < prices.Length; i++)
+        while (sell < prices.Length)
         {
-
-            for (int j = i + 1; j < prices.Length; j++)
+            if (prices[sell] > prices[buy])
             {
-                if (prices[j] > prices[i])
-                {
-                    buy = Math.Min(buy, i);
-
-                    profit = prices[j] - prices[i];
-
-                    maxProfit = Math.Max(maxProfit, profit);
-                }
+                maxProfit = Math.Max(maxProfit, prices[sell] - prices[buy]);
             }
+            else
+            {
+                buy = sell;
+            }
+
+            sell++;
         }
 
         return maxProfit;

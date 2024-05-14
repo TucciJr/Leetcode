@@ -13,19 +13,19 @@ internal class Problem088_MergeSortedArray
     }
     public void Merge(int[] nums1, int m, int[] nums2, int n)
     {
-        int p1 = m - 1;
-        int p2 = n - 1;
+        int l = m - 1;
+        int r = n - 1;
         int i = m + n - 1;
 
-        while (p2 >= 0)
+        while (r >= 0)
         {
-            var n1 = p1 >= 0 ? nums1[p1] : 0;
-            var n2 = nums2[p2];
+            var n1 = l >= 0 ? nums1[l] : 0;
+            var n2 = nums2[r];
 
-            if (p1 >= 0 && n1 > n2)
-                nums1[i--] = nums1[p1--];
+            if (l >= 0 && nums1[l] > nums2[r])
+                nums1[i--] = nums1[l--];
             else
-                nums1[i--] = nums2[p2--];
+                nums1[i--] = nums2[r--];
         }
 
         PrintArray(nums1);

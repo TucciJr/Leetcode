@@ -4,10 +4,10 @@ internal class Problem088_MergeSortedArray
     public Problem088_MergeSortedArray()
     {
         Merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
-        Merge([2, 0], 1, [1], 1);
-        Merge([4, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
-        Merge([1], 1, [], 0);
-        Merge([0], 0, [1], 1);
+        //Merge([2, 0], 1, [1], 1);
+        //Merge([4, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+        //Merge([1], 1, [], 0);
+        //Merge([0], 0, [1], 1);
     }
 
     public void Merge(int[] nums1, int m, int[] nums2, int n)
@@ -18,6 +18,7 @@ internal class Problem088_MergeSortedArray
 
         for (int i = 0; i < nums1.Length; i++)
         {
+            Console.Write($"{i} - ptN:{ptN} - ptM:{ptM} - clone[ptM]:{clone[ptM]} - nums2:{nums2[ptN]}");
             if (ptN >= n || (ptM < m && clone[ptM] <= nums2[ptN]))
             {
                 nums1[i] = clone[ptM++];
@@ -26,6 +27,8 @@ internal class Problem088_MergeSortedArray
             {
                 nums1[i] = nums2[ptN++];
             }
+
+            Console.WriteLine($" - {nums1[i]}");
         }
 
         PrintArray(nums1);
@@ -81,3 +84,9 @@ internal class Problem088_MergeSortedArray
         }
     }
 }
+/*
+1: [1,2,3]
+2: [2,5,6]
+
+
+*/

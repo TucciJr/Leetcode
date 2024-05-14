@@ -15,17 +15,17 @@ internal class Problem088_MergeSortedArray
     {
         int l = m - 1;
         int r = n - 1;
-        int i = m + n - 1;
+        int k = m + n - 1;
 
         while (r >= 0)
         {
             var n1 = l >= 0 ? nums1[l] : 0;
             var n2 = nums2[r];
 
-            if (l >= 0 && nums1[l] > nums2[r])
-                nums1[i--] = nums1[l--];
-            else
-                nums1[i--] = nums2[r--];
+            nums1[k--] = 
+                (l >= 0 && nums1[l] > nums2[r])
+                ? nums1[l--]
+                : nums2[r--];
         }
 
         PrintArray(nums1);

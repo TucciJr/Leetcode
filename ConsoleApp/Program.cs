@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 
-var BuySellStock = new Problem121_BuySellStock();
+//var BuySellStock = new Problem121_BuySellStock();
 
-var BuySellStockII = new Problem122_BuySellStockII();
+//var BuySellStockII = new Problem122_BuySellStockII();
+
+var MergeSortedArray = new Problem088_MergeSortedArray();

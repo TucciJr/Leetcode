@@ -13,19 +13,12 @@ internal class Problem088_MergeSortedArray
     }
     public void Merge(int[] nums1, int m, int[] nums2, int n)
     {
-        int l = m - 1;
-        int r = n - 1;
-        int k = m + n - 1;
-
-        while (r >= 0)
+        for (int i = nums1.Length - 1; i >= 0; i--)
         {
-            var n1 = l >= 0 ? nums1[l] : 0;
-            var n2 = nums2[r];
-
-            nums1[k--] = 
-                (l >= 0 && nums1[l] > nums2[r])
-                ? nums1[l--]
-                : nums2[r--];
+            if (m > 0 && nums1[m - 1] > nums2[n - 1])
+                nums1[i] = nums1[m-- - 1];
+            else
+                nums1[i] = nums2[n-- - 1];
         }
 
         PrintArray(nums1);

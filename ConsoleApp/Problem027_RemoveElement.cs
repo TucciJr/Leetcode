@@ -28,7 +28,6 @@ internal class Problem027_RemoveElement
 
         for (int i = 0;i < length; i++)
         {
-            if (arrayDiffs[i] == val) break;
             nums[i] = arrayDiffs[i];
         }
 

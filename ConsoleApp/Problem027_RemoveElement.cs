@@ -15,32 +15,21 @@ internal class Problem027_RemoveElement
     public int RemoveElement(int[] nums, int val)
     {
         var diffs = 0;
+        var length = nums.Length;
+        var arrayDiffs = new int[length];
 
-        for (int i = 0; i < nums.Length; i++)
+        for (int i = 0; i < length; i++)
         {
-            Console.WriteLine($"{i} = {nums[i]} - {nums[i] == val}");
-
-            Console.WriteLine($"{i} < {string.Join(",", nums)}");
-
             if (nums[i] != val)
             {
-                diffs++;
+                arrayDiffs[diffs++] = nums[i];
             }
-            else
-            {
-                for (int j = i + 1; j < nums.Length; j++)
-                {
-                    if (nums[j] != val)
-                    {
-                        diffs++;
-                        nums[i] = nums[j];
-                        nums[j] = val;
-                        break;
-                    }
-                }
-            }
+        }
 
-            Console.WriteLine($"{i} < {string.Join(",", nums)}");
+        for (int i = 0;i < length; i++)
+        {
+            if (arrayDiffs[i] == val) break;
+            nums[i] = arrayDiffs[i];
         }
 
         nums.Print();

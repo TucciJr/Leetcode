@@ -5,4 +5,6 @@
 
 //var BuySellStockII = new Problem122_BuySellStockII();
 
-var MergeSortedArray = new Problem088_MergeSortedArray();
+//var MergeSortedArray = new Problem088_MergeSortedArray();
+
+var RemoveElement = new Problem027_RemoveElement();

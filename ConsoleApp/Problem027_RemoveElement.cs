@@ -16,19 +16,13 @@ internal class Problem027_RemoveElement
     {
         var diffs = 0;
         var length = nums.Length;
-        var arrayDiffs = new int[length];
 
         for (int i = 0; i < length; i++)
         {
             if (nums[i] != val)
             {
-                arrayDiffs[diffs++] = nums[i];
+                nums[diffs++] = nums[i];
             }
-        }
-
-        for (int i = 0;i < length; i++)
-        {
-            nums[i] = arrayDiffs[i];
         }
 
         nums.Print();
